@@ -1,0 +1,16 @@
+name: deployment_exc
+on: push
+jobs:
+  deploy:
+  runs-on: ubuntu-latest
+  steps:
+    -name: get code
+     uses: actions/checkoiut@v3
+     with:
+      version: 14
+    -name: install dependicies
+     run: npm ci
+    -name: npm run lint
+     run: npm run test
+    -name: run build
+     run: echo "deploy the aj pack"
